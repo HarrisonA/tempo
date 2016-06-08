@@ -1,0 +1,15 @@
+tempo-api/.bundle
+tempo-api/log/*
+!tempo-api/log/.keep
+tempo-api/tmp
+
+tempo-frontend/dist
+tempo-frontend/tmp
+tempo-frontend/node_modules
+tempo-frontend/bower_components
+tempo-frontend/.sass-cache
+tempo-frontend/connect.lock
+tempo-frontend/coverage/*
+tempo-frontend/libpeerconnection.log
+tmepo-frontend/npm-debug.log
+tmepo-frontend/testem.log
