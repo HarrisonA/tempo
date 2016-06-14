@@ -1,0 +1,22 @@
+<h2>Edit Account</h2>
+
+<form {{action 'update' on="submit"}}>
+  <div class="field">
+    <label for="firstName">First Name</label>
+    {{input value=model.firstName}}
+  </div>
+
+  <div class="field">
+    <label for="lastName">Last Name</label>
+    {{input value=model.lastName}}
+  </div>
+
+  <div class="field">
+    <label for="email">Email</label>
+    {{input value=model.email}}
+  </div>
+
+  <button type="submit">Update Account</button>
+</form>
+
+<button {{action 'destroy'}}>Delete Account</button>

@@ -9,6 +9,9 @@ Router.map(function() {
   this.route('users');
   this.route('login');
   this.route('signup');
+  this.route('account', function() {
+    this.route('edit');
+  });
 });
 
 export default Router;

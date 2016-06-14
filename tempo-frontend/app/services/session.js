@@ -41,12 +41,15 @@ export default Ember.Service.extend({
         method: 'POST',
         url: '/users',
         data: {
-          user: {
-            first_name: userFirstName,
-            last_name: userLastName,
-            email: userEmail,
-            password: userPassword,
-            password_confirmation: userPasswordConfirmation
+          data: {
+            type: 'users',
+            attributes: {
+              first_name: userFirstName,
+              last_name: userLastName,
+              email: userEmail,
+              password: userPassword,
+              password_confirmation: userPasswordConfirmation
+            }
           }
         }
       }).then((data) => {
