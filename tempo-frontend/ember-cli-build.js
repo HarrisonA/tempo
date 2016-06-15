@@ -19,6 +19,8 @@ module.exports = function(defaults) {
   // modules that you would like to import into your application
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
+  app.import('vendor/resormalize.css');
+  app.import('bower_components/shevy/core/shevy.scss');
   app.import('bower_components/js-cookie/src/js.cookie.js');
 
   return app.toTree();

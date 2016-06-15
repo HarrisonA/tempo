@@ -1,0 +1,38 @@
+//////////////////////////////
+// Mixins
+//////////////////////////////
+
+// Breakpoint
+@mixin bp($bp) {
+  @if map-has-key($breakpoints, $bp) {
+    @media #{inspect(map-get($breakpoints, $bp))} {
+      @content;
+    }
+  } @else {
+    @warn "The breakpoint '#{$bp}' is not in the $breakpoints map.";
+  }
+}
+
+// Clearfix
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// Center Center
+@mixin centercenter {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Vertical Center
+@mixin vertcenter {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}

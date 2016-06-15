@@ -1,0 +1,24 @@
+//////////////////////////////
+// Tags
+//////////////////////////////
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+a {
+  color: $c-brand;
+  text-decoration: none;
+  transition: color .3s ease;
+
+  &:hover {
+    color: darken($c-brand, 10%);
+  }
+}

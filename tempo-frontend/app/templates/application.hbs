@@ -17,7 +17,7 @@
         {{link-to 'Account' 'account.index' class="nav-item-link"}}
       </li>
       <li class="nav-item">
-        <a href="#" {{action 'logout'}}>Logout</a>
+        <a href="#" {{action 'logout'}} class="nav-item-link">Logout</a>
       </li>
     {{else}}
       <li class="nav-item">
@@ -36,4 +36,6 @@
   {{/each}}
 </div>
 
-{{outlet}}
+<section class="main">
+  {{outlet}}
+</section>

@@ -1,0 +1,47 @@
+//////////////////////////////
+// Header
+//////////////////////////////
+
+.header {
+  @include clearfix;
+  background: $c-blue;
+  color: $c-white;
+  margin-bottom: bs(2);
+
+  &-logo {
+    float: left;
+    font-family: $f-spin;
+    padding: 10px;
+
+    &-heading {
+      margin-bottom: 0;
+    }
+
+    &-link {
+      color: $c-white;
+
+      &:hover {
+        color: darken($c-white, 10%);
+      }
+    }
+  }
+}
+
+.nav {
+  list-style: none;
+  float: right;
+
+  &-item {
+    display: inline-block;
+
+    &-link {
+      display: block;
+      color: $c-white;
+      padding: 10px;
+
+      &:hover {
+        color: darken($c-white, 10%);
+      }
+    }
+  }
+}
