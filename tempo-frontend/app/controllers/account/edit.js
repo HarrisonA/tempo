@@ -23,7 +23,6 @@ export default Ember.Controller.extend({
 
         model.destroyRecord().then(() => {
           this.get('session').logout();
-          this.transitionToRoute('application');
         }, (reason) => {
           console.log(reason);
         });

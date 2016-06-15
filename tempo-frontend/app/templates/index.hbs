@@ -4,5 +4,13 @@
   Tempo is a project planning/tracking application.
 </p>
 
+
+{{#unless session.currentUser}}
+  {{link-to 'Login' 'login'}}
+  <br>
+  {{link-to "Sign Up" "signup"}}
+  <br>
+{{/unless}}
+
 {{outlet}}
 

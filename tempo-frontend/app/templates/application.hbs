@@ -6,12 +6,12 @@
   </div>
 
   <nav class="nav">
-    <li class="nav-item">
-      {{link-to "Users" "users" class="nav-item-link"}}
-    </li>
     {{#if session.currentUser}}
       <li class="nav-item">
         Welcome {{session.currentUser.firstName}}!
+      </li>
+      <li class="nav-item">
+        {{link-to 'Dashboard' 'dashboard' class="nav-item-link"}}
       </li>
       <li class="nav-item">
         {{link-to 'Account' 'account.index' class="nav-item-link"}}

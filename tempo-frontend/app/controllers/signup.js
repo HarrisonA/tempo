@@ -56,8 +56,7 @@ export default Ember.Controller.extend(EmberValidations, {
       this.set('previousTransition', null);
       previousTransition.retry();
     } else {
-      // Default back to homepage
-      this.transitionToRoute('application');
+      this.transitionToRoute('index');
     }
   }
 });

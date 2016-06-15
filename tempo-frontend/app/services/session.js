@@ -33,6 +33,7 @@ export default Ember.Service.extend({
     this.set('currentUser', null);
     Cookies.remove('userId');
     Cookies.remove('authToken');
+    window.location.replace('');
   },
 
   signup(userFirstName, userLastName, userEmail, userPassword, userPasswordConfirmation) {
