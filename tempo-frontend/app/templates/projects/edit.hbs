@@ -1,0 +1,15 @@
+<h2>Edit Project</h2>
+
+<form {{action 'update' on="submit"}}>
+  <div class="field">
+    <label for="name">Project Name</label>
+    {{input value=model.name}}
+  </div>
+
+  <div class="field">
+    <label for="description">Description</label>
+    {{textarea value=model.description cols="40" rows="8"}}
+  </div>
+
+  <button type="submit">Update Project</button>
+</form>

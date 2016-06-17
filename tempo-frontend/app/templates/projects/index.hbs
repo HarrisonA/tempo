@@ -3,7 +3,7 @@
 {{#if model}}
   <ul>
     {{#each model as |project|}}
-      <li>{{link-to project.name "projects.detail" project}}</li>
+      <li>{{link-to project.name "projects.detail" project}} &mdash; {{link-to 'Edit' 'projects.edit' project}}</li>
     {{/each}}
   </ul>
 {{/if}}
