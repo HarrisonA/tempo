@@ -1,0 +1,11 @@
+<h2>Projects</h2>
+
+{{#if model}}
+  <ul>
+    {{#each model as |project|}}
+      <li>{{link-to project.name "projects.detail" project}}</li>
+    {{/each}}
+  </ul>
+{{/if}}
+
+{{outlet}}

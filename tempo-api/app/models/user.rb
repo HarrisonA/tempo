@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   has_secure_password
   before_save :set_auth_token
 
+  has_and_belongs_to_many :projects
+
   private
 
   def set_auth_token

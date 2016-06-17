@@ -9,10 +9,14 @@ Router.map(function() {
   this.route('users');
   this.route('login');
   this.route('signup');
-  this.route('account', function() {
-    this.route('edit');
+  this.route('profile', function() {
+    this.route('index', { path: '/:user_id'});
+    this.route('edit', { path: '/:user_id/edit'});
   });
   this.route('dashboard');
+  this.route('projects', function() {
+    this.route('detail', { path: '/:project_id' });
+  });
 });
 
 export default Router;

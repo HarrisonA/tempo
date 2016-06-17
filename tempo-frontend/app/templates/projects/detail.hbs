@@ -1,0 +1,11 @@
+<h2>{{model.name}}</h2>
+
+<h4>Brief Description</h4>
+{{model.description}}
+
+<h4>Project Users</h4>
+<ul>
+  {{#each model.users as |user|}}
+    <li>{{link-to user.fullName 'profile' user}}</li>
+  {{/each}}
+</ul>

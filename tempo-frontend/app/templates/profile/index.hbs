@@ -1,4 +1,4 @@
-<h2>Account</h2>
+<h2>Profile</h2>
 
 <div class="field">
   <span>Name: {{model.fullName}}</span>
@@ -8,4 +8,6 @@
   <span>Email: {{model.email}}</span>
 </div>
 
-{{link-to 'Edit Account' 'account.edit'}}
+{{#if isCurrentUser}}
+  {{link-to 'Edit Account' 'profile.edit' session.currentUser}}
+{{/if}}

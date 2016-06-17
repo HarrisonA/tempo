@@ -11,10 +11,13 @@
         Welcome {{session.currentUser.firstName}}!
       </li>
       <li class="nav-item">
+        {{link-to 'Projects' 'projects' class="nav-item-link"}}
+      </li>
+      <li class="nav-item">
         {{link-to 'Dashboard' 'dashboard' class="nav-item-link"}}
       </li>
       <li class="nav-item">
-        {{link-to 'Account' 'account.index' class="nav-item-link"}}
+        {{link-to 'Profile' 'profile' session.currentUser class="nav-item-link"}}
       </li>
       <li class="nav-item">
         <a href="#" {{action 'logout'}} class="nav-item-link">Logout</a>
