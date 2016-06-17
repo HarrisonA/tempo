@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  # before_action :authorize_user
+  before_action :authorize_user
   before_action :set_project, only: [:show, :update, :destroy]
 
   # GET /projects
