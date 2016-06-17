@@ -10,6 +10,20 @@ export default Ember.Controller.extend({
       }, (reason) => {
         console.log(reason)
       });
+    },
+
+    destroy() {
+      let confirmed = confirm('Are you sure you want to delete this project?');
+
+      if ( confirmed ) {
+        let model = this.get('model');
+
+        model.destroyRecord().then(() => {
+          this.transitionToRoute('projects');
+        }, (reason) => {
+          console.log(reason);
+        });
+      }
     }
   }
 });
