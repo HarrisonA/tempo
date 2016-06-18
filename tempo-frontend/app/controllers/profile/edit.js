@@ -9,7 +9,7 @@ export default Ember.Controller.extend({
       let model = this.get('model');
 
       model.save().then(() => {
-        this.transitionToRoute('account.index');
+        this.transitionToRoute('profile.index', model.id);
       }, (reason) => {
         console.log(reason);
       });

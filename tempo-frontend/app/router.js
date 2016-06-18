@@ -15,6 +15,7 @@ Router.map(function() {
   });
   this.route('dashboard');
   this.route('projects', function() {
+    this.route('new');
     this.route('detail', { path: '/:project_id' });
     this.route('edit', { path: '/:project_id/edit' });
   });
