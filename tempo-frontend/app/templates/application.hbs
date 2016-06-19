@@ -1,50 +1,10 @@
-<header class="header">
-  <div class="container">
-    <div class="header-logo">
-      {{#link-to 'application' class="header-logo-link"}}
-        <h1 class="header-logo-heading">Tempo</h1>
-      {{/link-to}}
-    </div>
-
-    <nav class="nav">
-      {{#if session.currentUser}}
-        <li class="nav-item">
-          Welcome {{session.currentUser.firstName}}!
-        </li>
-        <li class="nav-item">
-          {{link-to 'Projects' 'projects' class="nav-item-link"}}
-        </li>
-        <li class="nav-item">
-          {{link-to 'Dashboard' 'dashboard' class="nav-item-link"}}
-        </li>
-        <li class="nav-item">
-          {{link-to 'Profile' 'profile' session.currentUser class="nav-item-link"}}
-        </li>
-        <li class="nav-item">
-          <a href="#" {{action 'logout'}} class="nav-item-link">Logout</a>
-        </li>
-      {{else}}
-        <li class="nav-item">
-          {{link-to "Login" "login" class="nav-item-link"}}
-        </li>
-        <li class="nav-item">
-          {{link-to 'Sign Up' 'signup' class="nav-item-link"}}
-        </li>
-      {{/if}}
-    </nav>
-  </div>
-</header>
-
-<div class="flash_messages">
-  <div class="container">
-    {{#each flashMessages.queue as |flash|}}
-      {{flash-message flash=flash}}
-    {{/each}}
-  </div>
-</div>
+{{partial 'header'}}
+{{flash-messages flashMessages=flashMessages}}
 
 <section class="main">
   <div class="container">
     {{outlet}}
   </div>
 </section>
+
+{{partial 'footer'}}
