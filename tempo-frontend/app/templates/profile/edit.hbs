@@ -1,6 +1,6 @@
 <h2>Edit Account</h2>
 
-<form {{action 'update' on="submit"}}>
+<form {{action 'updateUser' on="submit"}}>
   <div class="field">
     <label for="firstName">First Name</label>
     {{input value=model.firstName}}
@@ -19,4 +19,4 @@
   <button type="submit">Update Account</button>
 </form>
 
-<button {{action 'destroy'}}>Delete Account</button>
+<button {{action 'destroyUser' model}}>Delete Account</button>

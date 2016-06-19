@@ -15,5 +15,27 @@ export default Ember.Route.extend(AuthenticatedRoute, {
       transition.abort();
       this.transitionTo('profile.index', model.id);
     }
+  },
+
+  actions: {
+    updateUser(user) {
+      user.save().then(() => {
+        this.transitionTo('profile.index', user);
+      }).catch((reason) => {
+        alert(`We could not update the user. Here's why: ${reason}`);
+      });
+    },
+
+    destroyUser(user) {
+      let confirmed = confirm('Are you sure you want to delete your account?');
+
+      if ( confirmed ) {
+        user.destroyRecord().then(() => {
+          this.get('session').logout();
+        }).catch((reason) => {
+          alert(`Unable to delete user. Here's why: ${reason}`);
+        });
+      }
+    }
   }
 });

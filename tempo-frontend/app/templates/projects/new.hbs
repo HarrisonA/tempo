@@ -1,6 +1,6 @@
 <h2>New Project</h2>
 
-<form {{action 'new' on="submit"}}>
+<form {{action 'createProject' model on="submit"}}>
   <div class="field">
     <label for="name">Project Name</label>
     {{input value=model.name}}
@@ -12,4 +12,5 @@
   </div>
 
   <button type="submit">Add Project</button>
+  <button {{action 'cancel'}}>Cancel</button>
 </form>

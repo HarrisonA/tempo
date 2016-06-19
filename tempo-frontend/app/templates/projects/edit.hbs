@@ -1,6 +1,6 @@
 <h2>Edit Project</h2>
 
-<form {{action 'update' on="submit"}}>
+<form {{action 'updateProject' model on="submit"}}>
   <div class="field">
     <label for="name">Project Name</label>
     {{input value=model.name}}
@@ -14,4 +14,4 @@
   <button type="submit">Update Project</button>
 </form>
 
-<button {{action 'destroy'}}>Delete Project</button>
+<button {{action 'destroyProject' model}}>Delete Project</button>

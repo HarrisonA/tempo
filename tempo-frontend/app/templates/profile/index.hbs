@@ -1,13 +1,9 @@
 <h2>Profile</h2>
 
-<div class="field">
-  <span>Name: {{model.fullName}}</span>
-</div>
-
-<div class="field">
-  <span>Email: {{model.email}}</span>
-</div>
+<span>Name: {{model.fullName}}</span> &mdash; <span>Email: <a href="mailto:{{model.email}}">{{model.email}}</a></span>
 
 {{#if isCurrentUser}}
-  {{link-to 'Edit Account' 'profile.edit' session.currentUser}}
+  <div>
+    {{link-to 'Edit Account' 'profile.edit' session.currentUser}}
+  </div>
 {{/if}}
