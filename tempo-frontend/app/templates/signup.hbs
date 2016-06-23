@@ -1,35 +1,3 @@
 <h2>Sign Up</h2>
 
-<form {{action 'signup' on="submit"}}>
-  <div class="field">
-    <label for="userFirstName">First Name</label>
-    {{input value=userFirstName}}
-    {{display-errors errors=errors.userFirstName showErrors=showErrors}}
-  </div>
-
-  <div class="field">
-    <label for="userLastName">Last Name</label>
-    {{input value=userLastName}}
-    {{display-errors errors=errors.userLastName showErrors=showErrors}}
-  </div>
-
-  <div class="field">
-    <label for="userEmail">Email Address</label>
-    {{input value=userEmail}}
-    {{display-errors errors=errors.userEmail showErrors=showErrors}}
-  </div>
-
-  <div class="field">
-    <label for="userPassword">Password</label>
-    {{input value=userPassword type="password"}}
-    {{display-errors errors=errors.userPassword showErrors=showErrors}}
-  </div>
-
-  <div class="field">
-    <label for="userPasswordConfirmation">Confirm Password</label>
-    {{input value=userPasswordConfirmation type="password"}}
-    {{display-errors errors=errors.userPasswordConfirmation showErrors=showErrors}}
-  </div>
-
-  <button type="submit">Sign Up</button>
-</form>
+{{signup-form}}
