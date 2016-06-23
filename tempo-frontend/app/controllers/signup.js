@@ -45,7 +45,7 @@ export default Ember.Controller.extend(EmberValidations, {
       }).catch((reason) => {
         this.set('showErrors', true);
         if ( typeof reason === 'string') {
-          this.get('flashMessages').danger(reason, {sticky: true})
+          this.get('flashMessages').danger(reason, {sticky: true});
         }
       });
     }

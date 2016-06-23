@@ -4,6 +4,8 @@ const { service } = Ember.inject;
 
 export default Ember.Service.extend({
   currentUser: null,
+  previousTransition: null,
+  routing: service('-routing'),
   store: service(),
 
   login(userEmail, userPassword) {
@@ -74,5 +76,16 @@ export default Ember.Service.extend({
       let user = this.get('store').find('user', userId);
       this.set('currentUser', user);
     }
-  }.on('init')
+  }.on('init'),
+
+  transitionToPreviousRoute() {
+    let previousTransition = this.get('previousTransition');
+
+    if ( previousTransition ) {
+      this.set('previousTransition', null);
+      previousTransition.retry();
+    } else {
+      this.get('routing').transitionTo('dashboard');
+    }
+  }
 });

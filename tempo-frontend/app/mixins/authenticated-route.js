@@ -7,9 +7,7 @@ export default Ember.Mixin.create({
 
   beforeModel(transition) {
     if ( !this.get('session.currentUser') ) {
-      var loginController = this.controllerFor('login');
-
-      loginController.set('previousTransition', transition);
+      this.set('session.previousTransition', transition);
       this.transitionTo('login');
     }
   }

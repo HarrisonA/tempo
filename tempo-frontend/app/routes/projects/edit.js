@@ -3,15 +3,15 @@ import AuthenticatedRoute from '../../mixins/authenticated-route';
 
 const { service } = Ember.inject;
 
-export default Ember.Route.extend({
+export default Ember.Route.extend(AuthenticatedRoute, {
   session: service(),
   model(params) {
     return this.store.findRecord('project', params.project_id);
   },
   actions: {
     updateProject(project) {
-      model.save().then(() => {
-        this.transitionTo('projects.edit', model);
+      project.save().then(() => {
+        this.transitionTo('projects.edit', project);
       }).catch((reason) => {
         alert(`We could not update the project. Here's why: ${reason}`);
       });

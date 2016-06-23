@@ -1,0 +1,15 @@
+<form {{action 'tryLogin' on="submit"}}>
+  <div class="field">
+    <label for="userEmail">Email</label>
+    {{input value=userEmail}}
+    {{display-errors errors=errors.userEmail showErrors=showErrors}}
+  </div>
+
+  <div class="field">
+    <label for="userPassword">Password</label>
+    {{input value=userPassword type="password"}}
+    {{display-errors errors=errors.userPassword showErrors=showErrors}}
+  </div>
+
+  <button type="submit">Login</button>
+</form>
