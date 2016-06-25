@@ -1,16 +1,3 @@
 <h2>New Project</h2>
 
-<form {{action 'createProject' model on="submit"}}>
-  <div class="field">
-    <label for="name">Project Name</label>
-    {{input value=model.name}}
-  </div>
-
-  <div class="field">
-    <label for="description">Description</label>
-    {{textarea value=model.description cols="40" rows="8"}}
-  </div>
-
-  <button type="submit">Add Project</button>
-  <button {{action 'cancel'}}>Cancel</button>
-</form>
+{{project-form project=model componentSubmit=(route-action "createProject" model) componentCancel=(route-action "cancel")}}

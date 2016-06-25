@@ -23,6 +23,8 @@ export default Ember.Route.extend(AuthenticatedRoute, {
     },
 
     cancel() {
+      let project = this.controller.get('model');
+
       this.transitionTo('projects.index');
     }
   }

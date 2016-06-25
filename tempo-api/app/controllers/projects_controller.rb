@@ -55,6 +55,7 @@ class ProjectsController < ApplicationController
     end
 
     def project_params
-      ActiveModelSerializers::Deserialization.jsonapi_parse(params, only: [:name, :description])
+      ActiveModelSerializers::Deserialization.jsonapi_parse(params,
+        only: [:name, :description, :users])
     end
 end
