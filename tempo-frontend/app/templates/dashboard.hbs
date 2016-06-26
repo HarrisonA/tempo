@@ -1,21 +1,19 @@
-<h2>Dashboard</h2>
+{{#default-page heading="Dashboard"}}
+  <h3>Your Projects</h3>
+  <ul>
+    {{#each model.projects as |project|}}
+      <li>{{link-to project.name "projects.detail" project}}</li>
+    {{else}}
+      <li>Currently, you have no projects.</li>
+    {{/each}}
+  </ul>
 
-<h3>Your Projects</h3>
-<ul>
-  {{#each model.projects as |project|}}
-    <li>{{link-to project.name "projects.detail" project}}</li>
-  {{else}}
-    <li>Currently, you have no projects.</li>
-  {{/each}}
-</ul>
-
-<h3>Your Tasks</h3>
-<ul>
-  {{#each model.tasks as |task|}}
-    <li>{{link-to task.title 'tasks.detail' task}}</li>
-  {{else}}
-    <li>Currently, there are no tasks assigned to you.</li>
-  {{/each}}
-</ul>
-
-{{outlet}}
+  <h3>Your Tasks</h3>
+  <ul>
+    {{#each model.tasks as |task|}}
+      <li>{{link-to task.title 'tasks.detail' task}}</li>
+    {{else}}
+      <li>Currently, there are no tasks assigned to you.</li>
+    {{/each}}
+  </ul>
+{{/default-page}}

@@ -1,14 +1,13 @@
-<h2>Projects</h2>
-<p>
-  {{link-to '+ Add Project' 'projects.new' class="btn"}}
-</p>
+{{#default-page heading="Projects"}}
+  <p>
+    {{link-to '+ Add Project' 'projects.new' class="btn"}}
+  </p>
 
-<ul>
-  {{#each model as |project|}}
-    <li>{{link-to project.name "projects.detail" project}} &mdash; {{link-to 'Edit' 'projects.edit' project}}</li>
-  {{else}}
-    <li>Currently, there are no projects</li>
-  {{/each}}
-</ul>
-
-{{outlet}}
+  <ul>
+    {{#each model as |project|}}
+      <li>{{link-to project.name "projects.detail" project}} &mdash; {{link-to 'Edit' 'projects.edit' project}}</li>
+    {{else}}
+      <li>Currently, there are no projects</li>
+    {{/each}}
+  </ul>
+{{/default-page}}

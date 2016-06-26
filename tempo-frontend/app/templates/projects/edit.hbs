@@ -1,5 +1,9 @@
-<h2>Edit Project</h2>
+{{#default-page heading="Edit Project"}}
+  {{project-form
+    project=model
+    componentSubmit=(route-action "updateProject" model)
+    componentCancel=(route-action "cancel")
+  }}
 
-{{project-form project=model componentSubmit=(route-action "updateProject" model) componentCancel=(route-action "cancel")}}
-
-<button {{action 'destroyProject' model}}>Delete Project</button>
+  <button {{action 'destroyProject' model}}>Delete Project</button>
+{{/default-page}}

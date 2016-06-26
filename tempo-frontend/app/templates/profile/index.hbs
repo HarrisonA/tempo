@@ -1,9 +1,9 @@
-<h2>Profile</h2>
+{{#default-page heading="Profile"}}
+  <span>Name: {{model.fullName}}</span> &mdash; <span>Email: <a href="mailto:{{model.email}}">{{model.email}}</a></span>
 
-<span>Name: {{model.fullName}}</span> &mdash; <span>Email: <a href="mailto:{{model.email}}">{{model.email}}</a></span>
-
-{{#if isCurrentUser}}
-  <div>
-    {{link-to 'Edit Account' 'profile.edit' session.currentUser}}
-  </div>
-{{/if}}
+  {{#if isCurrentUser}}
+    <div>
+      {{link-to 'Edit Account' 'profile.edit' session.currentUser}}
+    </div>
+  {{/if}}
+{{/default-page}}

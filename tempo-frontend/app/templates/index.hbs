@@ -1,13 +1,8 @@
-<h2>Welcome</h2>
+{{#default-page heading="Welcome"}}
+  <p>Tempo is a project planning and tracking application.</p>
 
-<p>
-  Tempo is a project planning/tracking application.
-</p>
-
-
-{{#unless session.currentUser}}
-  {{link-to 'Login' 'login'}}
-  <br>
-  {{link-to "Sign Up" "signup"}}
-  <br>
-{{/unless}}
+  {{#unless session.currentUser}}
+    {{link-to 'Login' 'login'}}<br/>
+    {{link-to 'Sign Up' 'signup'}}
+  {{/unless}}
+{{/default-page}}

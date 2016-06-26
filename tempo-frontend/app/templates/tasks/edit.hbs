@@ -1,9 +1,9 @@
-<h2>Edit Task</h2>
+{{#default-page heading="Edit Task"}}
+  {{task-form
+    task=model
+    componentSubmit=(route-action 'updateTask' model)
+    componentCancel=(route-action 'cancel')
+  }}
 
-{{task-form
-  task=model
-  componentSubmit=(route-action 'updateTask' model)
-  componentCancel=(route-action 'cancel')
-}}
-
-<button {{action 'destroyTask' model}}>Delete Task</button>
+  <button {{action 'destroyTask' model}}>Delete Task</button>
+{{/default-page}}

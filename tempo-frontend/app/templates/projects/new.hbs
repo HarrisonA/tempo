@@ -1,3 +1,7 @@
-<h2>New Project</h2>
-
-{{project-form project=model componentSubmit=(route-action "createProject" model) componentCancel=(route-action "cancel")}}
+{{#default-page heading="New Project"}}
+  {{project-form
+    project=model
+    componentSubmit=(route-action "createProject" model)
+    componentCancel=(route-action "cancel")
+  }}
+{{/default-page}}

@@ -1,14 +1,15 @@
-<h2>{{model.name}}</h2>
-<p>{{link-to 'Edit' 'projects.edit' model}}</p>
+{{#default-page heading=model.name}}
+  <p>{{link-to 'Edit' 'projects.edit' model}}</p>
 
-<h3>Brief Description</h3>
-<p>{{model.description}}</p>
+  <h3>Brief Description</h3>
+  <p>{{model.description}}</p>
 
-<h3>Project Users</h3>
-<ul>
-  {{#each model.users as |user|}}
-    <li>{{link-to user.fullName 'profile' user}}</li>
-  {{else}}
-    <li>Currently, there are no users on this project.</li>
-  {{/each}}
-</ul>
+  <h3>Project Users</h3>
+  <ul>
+    {{#each model.users as |user|}}
+      <li>{{link-to user.fullName 'profile' user}}</li>
+    {{else}}
+      <li>Currently, there are no users on this project.</li>
+    {{/each}}
+  </ul>
+{{/default-page}}

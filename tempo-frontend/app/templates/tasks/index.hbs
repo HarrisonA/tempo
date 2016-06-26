@@ -1,12 +1,11 @@
-<h2>Tasks</h2>
-<p>
-  {{link-to '+ Add Task' 'tasks.new'}}
-</p>
+{{#default-page heading="Tasks"}}
+  <p>{{link-to '+ Add Task' 'tasks.new'}}</p>
 
-<ul>
-  {{#each model as |task|}}
-    <li>{{link-to task.title "tasks.detail" task}}</li>
-  {{else}}
-    <li>Currently, there are no tasks.</li>
-  {{/each}}
-</ul>
+  <ul>
+    {{#each model as |task|}}
+      <li>{{link-to task.title "tasks.detail" task}}</li>
+    {{else}}
+      <li>Currently, there are no tasks.</li>
+    {{/each}}
+  </ul>
+{{/default-page}}

@@ -1,22 +1,22 @@
-<h2>Edit Account</h2>
+{{#default-page heading="Edit Account"}}
+  <form {{action 'updateUser' on="submit"}}>
+    <div class="field">
+      <label for="firstName">First Name</label>
+      {{input value=model.firstName}}
+    </div>
 
-<form {{action 'updateUser' on="submit"}}>
-  <div class="field">
-    <label for="firstName">First Name</label>
-    {{input value=model.firstName}}
-  </div>
+    <div class="field">
+      <label for="lastName">Last Name</label>
+      {{input value=model.lastName}}
+    </div>
 
-  <div class="field">
-    <label for="lastName">Last Name</label>
-    {{input value=model.lastName}}
-  </div>
+    <div class="field">
+      <label for="email">Email</label>
+      {{input value=model.email}}
+    </div>
 
-  <div class="field">
-    <label for="email">Email</label>
-    {{input value=model.email}}
-  </div>
+    <button type="submit">Update Account</button>
+  </form>
 
-  <button type="submit">Update Account</button>
-</form>
-
-<button {{action 'destroyUser' model}}>Delete Account</button>
+  <button {{action 'destroyUser' model}}>Delete Account</button>
+{{/default-page}}
