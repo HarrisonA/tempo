@@ -1,0 +1,9 @@
+<h2>Edit Task</h2>
+
+{{task-form
+  task=model
+  componentSubmit=(route-action 'updateTask' model)
+  componentCancel=(route-action 'cancel')
+}}
+
+<button {{action 'destroyTask' model}}>Delete Task</button>

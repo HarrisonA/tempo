@@ -1,0 +1,36 @@
+<form {{action "onSubmit" on="submit"}}>
+  <div class="field">
+    <label for="title">Title</label>
+    {{input value=task.title}}
+  </div>
+
+  <div class="field">
+    <label for="description">Description</label>
+    {{textarea value=task.description}}
+  </div>
+
+  <div class="field">
+    <label for="project">Project</label>
+    {{#power-select
+      options=projects
+      selected=task.project
+      onchange=(action (mut task.project))
+      as |project|}}
+      {{project.name}}
+    {{/power-select}}
+  </div>
+
+  <div class="field">
+    <label for="user">User</label>
+    {{#power-select
+      options=users
+      selected=task.user
+      onchange=(action (mut task.user))
+      as |user|}}
+      {{user.fullName}}
+    {{/power-select}}
+  </div>
+
+  <button type="submit">Save</button>
+  <button {{action 'onCancel'}}>Cancel</button>
+</form>

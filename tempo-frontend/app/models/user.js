@@ -10,5 +10,6 @@ export default Model.extend({
     return `${this.get('firstName')} ${this.get('lastName')}`;
   }),
   email: attr(),
-  projects: hasMany('project')
+  projects: hasMany('project'),
+  tasks: hasMany('task')
 });

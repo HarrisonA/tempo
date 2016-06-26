@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   before_save :set_auth_token
 
   has_and_belongs_to_many :projects
+  has_many :tasks
 
   private
 

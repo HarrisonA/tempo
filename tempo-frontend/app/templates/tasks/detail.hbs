@@ -1,0 +1,13 @@
+<h2>{{model.title}}</h2>
+<p>
+  {{link-to 'Edit' 'tasks.edit' model}}
+</p>
+
+<h3>Description</h3>
+<p>
+  {{model.description}}
+</p>
+
+<p>Project: {{link-to model.project.name 'projects.detail' model.project}}</p>
+
+<p>User: {{link-to model.user.fullName 'profile' model.user}}</p>

@@ -31,8 +31,6 @@ class ProjectsController < ApplicationController
   # PATCH/PUT /projects/1
   # PATCH/PUT /projects/1.json
   def update
-    @project = Project.find(params[:id])
-
     if @project.update(project_params)
       head :no_content
     else
